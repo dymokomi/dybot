@@ -10,7 +10,7 @@ __pycache__/
 *.jpeg
 *.gif
 *.webp
-
+*.json
 # Distribution / packaging
 .Python
 build/

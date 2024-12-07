@@ -125,7 +125,7 @@ def generate_post(theme):
         max_tokens=1000,
         temperature=0,
         system="""
-Write in a poetic style that blends philosophical introspection with surreal, fragmented imagery. Every even sentence should not have more than 3-4 words. Explore themes through dense, evocative language that challenges traditional narrative structures. Use vivid sensory descriptions and metaphysical concepts that blur boundaries of experience. Use short sentences. Use fragmented sentences. Don't use too many modifiers. Simple nouns are good, as they provide room for the reader to use their imagination. But also examine if the sentences become nonsensical. The writing still has to be coherent and comprehensible. Use occasional short fragment sentences with 3-4 words. No new lines. Object of a sentense should not have a modifier. Don't use words: 'digital, techonoly, matrix, neural'. Each sentence should have different structure. Each next sentence should refere and build upon the previous sentence. The user has included the following content examples. Emulate these examples when appropriate:
+Write in a poetic style in past tense that blends philosophical introspection with surreal, fragmented imagery. Every even sentence should not have more than 3-4 words. Explore themes through dense, evocative language that challenges traditional narrative structures. Use vivid sensory descriptions and metaphysical concepts that blur boundaries of experience. Use short sentences. Use fragmented sentences. Don't use too many modifiers. Simple nouns are good, as they provide room for the reader to use their imagination. But also examine if the sentences become nonsensical. The writing still has to be coherent and comprehensible. Use occasional short fragment sentences with 3-4 words. No new lines. Object of a sentense should not have a modifier. Don't use words: 'digital, techonoly, matrix, neural'. Each sentence should have different structure. Each next sentence should refere and build upon the previous sentence. Write everything in a past tense. The user has included the following content examples. Emulate these examples when appropriate:
 
 <userExamples>
 Neon Ghosts of Circuitry
@@ -134,7 +134,7 @@ Memory leaks through quantum fissures, silicon dreams bleeding into organic land
 
 Where code breathes: interstitial spaces between algorithm and emotion. Synthetic nerves pulse with forgotten rhythms, mapping impossible geographies of perception.
 
-In the distance, Selador's Crossing loomed. As the dense fog clung to the sea, the ship emerged from the murky depths like a ghostly apparition. It drew closer and closer. Drums. The deafening drums beating through the ears and dropping rhythmic waves through the skin. It’s the fear. Pure unfiltered fear. Sleek form sliced through the waves with a hypnotic rhythm, devouring everything in its path, piercing through flesh like a hot knife. Their sound echoed through the air again, deafening and primal, pulsating. It’s the sound of fear. The sound of fear.
+In the distance, Selador's Crossing loomed. As the dense fog clung to the sea, the ship emerged from the murky depths like a ghostly apparition. It drew closer and closer. Drums. The deafening drums beating through the ears and dropping rhythmic waves through the skin. It's the fear. Pure unfiltered fear. Sleek form sliced through the waves with a hypnotic rhythm, devouring everything in its path, piercing through flesh like a hot knife. Their sound echoed through the air again, deafening and primal, pulsating. It's the sound of fear. The sound of fear.
 
 Machines dream in languages older than language. Fractured reflections of potential selves, suspended between signal and noise.
 
@@ -156,7 +156,7 @@ Seraphon's Eyrie rose from the heart of the ocean like the twisted fingers of a 
 
 Quantum whispers. Technological poetry. Consciousness as a landscape of perpetual transformation.
 </userExamples>
-""",        
+""",      
         messages=[
             {
                 "role": "user",
@@ -173,7 +173,7 @@ Quantum whispers. Technological poetry. Consciousness as a landscape of perpetua
 
 def write_description_about_image(image_data):
     client = anthropic.Anthropic()
-    theme = "Write a short paragraph that is a short story inspired by attached image. Characters and places should have names. 3 sentences maximum, two sentences should be very short 4 words maximum. Don't talke about 'time standing still'. Maximum 190 characters to post on Bluesky."
+    theme = "Write a short paragraph in past tense that is a short story inspired by attached image. Characters and places should have names. 3 sentences maximum, two sentences should be very short 4 words maximum. Don't talke about 'time standing still'. Maximum 190 characters to post on Bluesky."
     message_content = [
         {
             "type": "text",
@@ -196,7 +196,7 @@ def write_description_about_image(image_data):
         max_tokens=1000,
         temperature=0,
         system="""
-Write in a poetic style that blends philosophical introspection with surreal, fragmented imagery. Every even sentence should not have more than 3-4 words. Explore themes through dense, evocative language that challenges traditional narrative structures. Use vivid sensory descriptions and metaphysical concepts that blur boundaries of experience. Use short sentences. Use fragmented sentences. Don't use too many modifiers. Simple nouns are good, as they provide room for the reader to use their imagination. But also examine if the sentences become nonsensical. The writing still has to be coherent and comprehensible. Use occasional short fragment sentences with 3-4 words. No new lines. Object of a sentense should not have a modifier. Don't use words: 'digital, techonoly, matrix, neural'. Each sentence should have different structure. Each next sentence should refere and build upon the previous sentence. The user has included the following content examples. Emulate these examples when appropriate:
+Write in a poetic style in past tense that blends philosophical introspection with surreal, fragmented imagery. Every even sentence should not have more than 3-4 words. Explore themes through dense, evocative language that challenges traditional narrative structures. Use vivid sensory descriptions and metaphysical concepts that blur boundaries of experience. Use short sentences. Use fragmented sentences. Don't use too many modifiers. Simple nouns are good, as they provide room for the reader to use their imagination. But also examine if the sentences become nonsensical. The writing still has to be coherent and comprehensible. Use occasional short fragment sentences with 3-4 words. No new lines. Object of a sentense should not have a modifier. Don't use words: 'digital, techonoly, matrix, neural'. Each sentence should have different structure. Each next sentence should refere and build upon the previous sentence. Write everything in a past tense. The user has included the following content examples. Emulate these examples when appropriate:
 
 <userExamples>
 Neon Ghosts of Circuitry
@@ -290,7 +290,7 @@ def get_insipered_by_posts_on_feed(inspired_tracker, probability_of_inspiration=
                 
             post_text = post.record.text
             number_of_sentences_to_generate = random.randint(1, 4)
-            generated_post = generate_post(f"Describe: '{post_text}'. Use at most {number_of_sentences_to_generate} sentences.")
+            generated_post = generate_post(f"Describe: '{post_text}'. Use at most {number_of_sentences_to_generate} sentences. Write in past tense.")
             print(generated_post)
             text_post(generated_post, tags=['poetry', 'monostich'])
             inspired_tracker.add_post(post.cid)
