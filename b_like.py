@@ -346,18 +346,6 @@ def main():
             name="Like Posts",
             liked_tracker=liked_tracker
         ),
-        ScheduledTask(
-            get_insipered_by_posts_on_feed,
-            interval_seconds=3600*3,  # 5 hour
-            name="Get Inspired",
-            inspired_tracker=inspired_tracker
-        ),
-        ScheduledTask(
-            post_image_post,
-            interval_seconds=3600*7,  # 7 hour
-            name="Post Image",
-            tags=['aiart', 'generativeart']
-        ),
     ]
 
 
